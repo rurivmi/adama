@@ -1,0 +1,23 @@
+Datos meteorológicos: se han utilizado datos horarios recogidos desde el año 2019 hasta 2024 procedente del portal de datos abiertos de Madrid (1).  
+- Velocidad del viento
+- Dirección del viento
+- Temperatura
+- Humedad relativa
+- Presión Barométrica
+- Precipitación
+
+Polución del aire: (2): los datos de contaminación atmosférica han sido medidos automáticamente en las estaciones de medición de diferentes puntos de la Comunidad de Madrid. La calidad del aire se encuentre influenciada por la presencia en el aire de los siguientes materiales contaminantes: 
+-CO: El monóxido de carbono es un gas inodoro, incoloro y tóxico que se genera como producto de los dispositivos de combustión. En consecuencia, se encuentra en niveles elevados en lugares y horas del día con alto tráfico. Respirar niveles altos de CO puede causar daños permanentes del corazón y el cerebro. 
+- NO: el monóxido de carbono es un compuesto químico originado por la combustión incompleta de carburantes fósiles y de biocombustibles. 
+- NO2: El dióxido de nitrógeno es una sustancia química emitida en los motores de combustión, especialmente de diésel. Su exposición se encuentra asociada con enfermedades respiratorias crónicas y al envejecimiento prematuro de los pulmones. 
+- NOX: 
+- Partículas por millón 2.5 (PM2,5): las partículas en suspensión son una mezcla de sustancias químicas orgánicas, polvo, hollín y metales. Estas partículas, como su nombre lo indica, tienen un diámetro de 2,5 micras, por lo que resultan más finas que un cabello humano, lo que implica que pueden pasar al torrente sanguíneo a través de la respiración pudiendo provocar enfermedades respiratorias y cardiovasculares. 
+- Partículas por millón 10:
+
+Intensidad de tráfico:(3)
+- Intensidad de tráfico
+
+Festividades comunidad de Madrid:(4)
+- Días festivos comunidad de Madrid
+
+Utilizando estos datos y YOLO8 (5) conectados a la cámara de Skyline Calle de Alcalá (6) podemos predecir y recomendar a los usuarios cercanos a la zona realizar actividades al aire libre o por otro lado tomar precauciones.
