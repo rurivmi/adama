@@ -1,9 +1,8 @@
 import streamlit as st
 import os
 
-
 # Page title
-st.set_page_config(page_title='ADAMA Project', page_icon='☁️')
+st.set_page_config(page_title='ADAMA', page_icon='☁️')
 st.title('🚗🚗☁️☁️ ADAMA ☁️☁️🏃🏃‍♂️')
 
 
