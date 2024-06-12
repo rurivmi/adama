@@ -11,7 +11,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model.to(device)
 
 # Definir una línea para contar los vehículos
-line_y = 250  # Y-coordinate of the line
+line_y = 300  # Y-coordinate of the line
 
 def detect_and_count_vehicles(video_path):
     cap = cv2.VideoCapture(video_path)
@@ -59,9 +59,9 @@ def detect_and_count_vehicles(video_path):
         cv2.putText(frame, f'Numero de vehiculos: {count}', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
         
         # Mostrar los FPS y el tiempo transcurrido
-        # cv2.putText(frame, f'FPS del video: {fps:.2f}', (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
-        # cv2.putText(frame, f'Tiempo del video: {elapsed_time_seconds:.2f}s', (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
-        # cv2.putText(frame, f'Tiempo real: {real_time_elapsed:.2f}s', (10, 120), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+        #cv2.putText(frame, f'FPS del video: {fps:.2f}', (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+        #cv2.putText(frame, f'Tiempo del video: {elapsed_time_seconds:.2f}s', (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+        #cv2.putText(frame, f'Tiempo real: {real_time_elapsed:.2f}s', (10, 120), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
 
         # Mostrar el frame
         cv2.imshow('Vehicle Detection', frame)
