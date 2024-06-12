@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 from datetime import datetime
+import os
 
 
 # Obtener la ruta del directorio de trabajo actual de Streamlit
