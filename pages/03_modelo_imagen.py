@@ -12,5 +12,7 @@ script_dir = os.path.dirname(script_path)
 
 # Construir las rutas completas a los archivos necesarios, subiendo un nivel desde 'pages'
 base_dir = os.path.dirname(script_dir)  # Subir un nivel desde 'pages'
- 
-st.video(os.path.join())
+
+model_path = os.path.join(base_dir, "pickle_modelo", "xgboost_NO2.pkl")
+
+st.video(os.path.join(base_dir, "data", "vehicles_detector.mp4"))
