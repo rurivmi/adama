@@ -12,7 +12,7 @@ script_dir = os.path.dirname(script_path)
 # Construir las rutas completas a los archivos necesarios, subiendo un nivel desde 'pages'
 base_dir = os.path.dirname(script_dir)  # Subir un nivel desde 'pages'
 model_path = os.path.join(base_dir, "pickle_modelo", "xgboost_NO2.pkl")
-scaler_X_path = os.path.join(base_dir, "pickle_modelo", "scaler_x.pkl")
+scaler_X_path = os.path.join(base_dir, "pickle_modelo", "scaler_X.pkl")
 encoder_path = os.path.join(base_dir, "pickle_modelo", "encoder.pkl")
 scaler_y_path = os.path.join(base_dir, "pickle_modelo", "scaler_y.pkl")
 festivos_path = os.path.join(base_dir, "data", "calendario.xls")
