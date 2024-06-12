@@ -38,7 +38,7 @@ scaler_y = load_pickle_file(scaler_y_path)
 try:
     festivos_df = pd.read_excel(festivos_path, parse_dates=['Dia'])
     festivos_dict = festivos_df.set_index('Dia')['laborable / festivo / domingo festivo'].to_dict()
-    st.success("Archivo de calendario cargado exitosamente.")
+    #st.success("Archivo de calendario cargado exitosamente.")
 except FileNotFoundError:
     st.error(f"No se encontró el archivo del calendario en la ruta: {festivos_path}")
 except Exception as e:
@@ -46,7 +46,7 @@ except Exception as e:
 
 # Asegurarse de que todos los modelos y archivos se hayan cargado correctamente
 if model and scaler_X and encoder and scaler_y and festivos_df is not None:
-    st.success("Todos los archivos cargados exitosamente.")
+    #st.success("Todos los archivos cargados exitosamente.")
 else:
     st.error("Hubo un problema al cargar los archivos.")
     
