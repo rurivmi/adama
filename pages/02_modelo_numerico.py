@@ -5,16 +5,17 @@ from datetime import datetime
 import os
 
 
-# Obtener la ruta del directorio de trabajo actual de Streamlit
+# Obtener la ruta del directorio del script actual
 script_path = os.path.abspath(__file__)
 script_dir = os.path.dirname(script_path)
 
-# Construir las rutas completas a los archivos necesarios
-model_path = os.path.join(script_dir, "pickle_modelo", "xgboost_NO2.pkl")
-scaler_X_path = os.path.join(script_dir, "pickle_modelo", "scaler_x.pkl")
-encoder_path = os.path.join(script_dir, "pickle_modelo", "encoder.pkl")
-scaler_y_path = os.path.join(script_dir, "pickle_modelo", "scaler_y.pkl")
-festivos_path = os.path.join(script_dir, "data", "calendario.xls")
+# Construir las rutas completas a los archivos necesarios, subiendo un nivel desde 'pages'
+base_dir = os.path.dirname(script_dir)  # Subir un nivel desde 'pages'
+model_path = os.path.join(base_dir, "pickle_modelo", "xgboost_NO2.pkl")
+scaler_X_path = os.path.join(base_dir, "pickle_modelo", "scaler_x.pkl")
+encoder_path = os.path.join(base_dir, "pickle_modelo", "encoder.pkl")
+scaler_y_path = os.path.join(base_dir, "pickle_modelo", "scaler_y.pkl")
+festivos_path = os.path.join(base_dir, "data", "calendario.xls")
 
 # Función para cargar un archivo pickle
 def load_pickle_file(file_path):
