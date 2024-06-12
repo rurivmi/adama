@@ -3,13 +3,42 @@ import pandas as pd
 import pickle
 from datetime import datetime
 
-# Cargar los modelos y scalers
-model = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/xgboost_NO2.pkl")), 'rb'))
-scaler_X = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/scaler_x.pkl")), 'rb'))
-encoder = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/encoder.pkl")), 'rb'))
-scaler_y = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/scaler_y.pkl")), 'rb'))
-festivos_df = pd.read_excel('data/calendario.xls', parse_dates=['Dia'])
-festivos_dict = festivos_df.set_index('Dia')['laborable / festivo / domingo festivo'].to_dict()
+
+# Obtener la ruta del directorio de trabajo actual de Streamlit
+script_dir = os.getcwd()
+
+# Construir las rutas completas a los archivos necesarios
+model_path = os.path.join(script_dir, "pickle_modelo", "xgboost_NO2.pkl")
+scaler_X_path = os.path.join(script_dir, "pickle_modelo", "scaler_x.pkl")
+encoder_path = os.path.join(script_dir, "pickle_modelo", "encoder.pkl")
+scaler_y_path = os.path.join(script_dir, "pickle_modelo", "scaler_y.pkl")
+festivos_path = os.path.join(script_dir, "data", "calendario.xls")
+
+# Función para cargar un archivo pickle
+def load_pickle_file(file_path):
+    try:
+        with open(file_path, 'rb') as file:
+            return pickle.load(file)
+    except FileNotFoundError:
+        st.error(f"No se encontró el archivo en la ruta: {file_path}")
+    except Exception as e:
+        st.error(f"Error al cargar el archivo {file_path}: {e}")
+    return None
+
+# Cargar los modelos y escaladores
+model = load_pickle_file(model_path)
+scaler_X = load_pickle_file(scaler_X_path)
+encoder = load_pickle_file(encoder_path)
+scaler_y = load_pickle_file(scaler_y_path)
+
+# Cargar el archivo de Excel
+try:
+    festivos_df = pd.read_excel(festivos_path, parse_dates=['Dia'])
+    st.success("Archivo de calendario cargado exitosamente.")
+except FileNotFoundError:
+    st.error(f"No se encontró el archivo del calendario en la ruta: {festivos_path}")
+except Exception as e:
+    st.error(f"Error al cargar el archivo del calendario: {e}")
 
 # Definir las funciones de preprocesamiento
 def get_franja_horaria(hour):
