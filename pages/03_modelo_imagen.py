@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import os
+import base64
 
 st.header('Modelo imagen')
 st.caption('Detección automática de vehículos mediante YOLO.')
