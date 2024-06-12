@@ -102,7 +102,8 @@ def predict_no2(json_data, model, scaler_X, encoder, scaler_y, festivos_dict):
 
 # Interfaz de usuario en Streamlit
 st.header('Modelo predictivo concentración NO2')
-st.caption('En esta sección se muestra el modelo numérico que se ha desarrollado para predecir la concentración de NO2')
+st.caption('Desde ADAMA hemos desarrollado un modelo predictivo de concentración de NO2. Introduce los parámetros y descubre la concentración de NO2 en tu ciudad.')
+st.caption('¡ADAMA te ayuda a elegir cuando hacer deporte con seguridad!')
 
 date = st.date_input('Selecciona la fecha')
 time = st.time_input('Selecciona la hora')
