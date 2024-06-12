@@ -6,7 +6,8 @@ import os
 
 
 # Obtener la ruta del directorio de trabajo actual de Streamlit
-script_dir = os.getcwd()
+script_path = os.path.abspath(__file__)
+script_dir = os.path.dirname(script_path)
 
 # Construir las rutas completas a los archivos necesarios
 model_path = os.path.join(script_dir, "pickle_modelo", "xgboost_NO2.pkl")
@@ -35,11 +36,19 @@ scaler_y = load_pickle_file(scaler_y_path)
 # Cargar el archivo de Excel
 try:
     festivos_df = pd.read_excel(festivos_path, parse_dates=['Dia'])
+    festivos_dict = festivos_df.set_index('Dia')['laborable / festivo / domingo festivo'].to_dict()
     st.success("Archivo de calendario cargado exitosamente.")
 except FileNotFoundError:
     st.error(f"No se encontró el archivo del calendario en la ruta: {festivos_path}")
 except Exception as e:
     st.error(f"Error al cargar el archivo del calendario: {e}")
+
+# Asegurarse de que todos los modelos y archivos se hayan cargado correctamente
+if model and scaler_X and encoder and scaler_y and festivos_df is not None:
+    st.success("Todos los archivos cargados exitosamente.")
+else:
+    st.error("Hubo un problema al cargar los archivos.")
+    
 
 # Definir las funciones de preprocesamiento
 def get_franja_horaria(hour):
