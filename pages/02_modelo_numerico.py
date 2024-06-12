@@ -6,10 +6,10 @@ from datetime import datetime
 (os.path.join("\\".join(script_path.split("\\")[:-1]), "data/df_final.csv"))
 
 # Cargar los modelos y scalers
-model = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "data/xgboost_NO2.pkl")), 'rb'))
-scaler_X = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "data/scaler_x.pkl")), 'rb'))
-encoder = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "data/encoder.pkl")), 'rb'))
-scaler_y = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "data/scaler_y.pkl")), 'rb'))
+model = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/xgboost_NO2.pkl")), 'rb'))
+scaler_X = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/scaler_x.pkl")), 'rb'))
+encoder = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/encoder.pkl")), 'rb'))
+scaler_y = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/scaler_y.pkl")), 'rb'))
 festivos_df = pd.read_excel('data/calendario.xls', parse_dates=['Dia'])
 festivos_dict = festivos_df.set_index('Dia')['laborable / festivo / domingo festivo'].to_dict()
 
