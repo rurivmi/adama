@@ -3,8 +3,6 @@ import pandas as pd
 import pickle
 from datetime import datetime
 
-(os.path.join("\\".join(script_path.split("\\")[:-1]), "data/df_final.csv"))
-
 # Cargar los modelos y scalers
 model = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/xgboost_NO2.pkl")), 'rb'))
 scaler_X = pickle.load(open((os.path.join("\\".join(script_path.split("\\")[:-1]), "pickle_modelo/scaler_x.pkl")), 'rb'))
