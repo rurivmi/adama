@@ -4,8 +4,8 @@ import seaborn as sns
 import os
 import base64
 
-st.header('Detección automática de vehículos mediante YOLO')
-st.caption('A través de este modelo, desde ADAMA somos capaces de determinar la intensidad de tráfico. Con dicha variable y junto con las variables atmosféricas, seremos capaces de determinar el nivel de concentración de NO2 en la vía donde se encuentra la cámara.')
+st.header('Detección automática de vehículos')
+st.caption('A través de este modelo, desde ADAMA somos capaces de determinar la intensidad de tráfico haciendo uso de YOLO. Con dicha variable y junto con las variables atmosféricas, seremos capaces de determinar el nivel de concentración de NO2 en la vía donde se encuentra la cámara.')
 
 # Obtener la ruta del directorio del script actual
 script_path = os.path.abspath(__file__)
