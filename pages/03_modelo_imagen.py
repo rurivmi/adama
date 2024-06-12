@@ -10,6 +10,7 @@ st.caption('Detección automática de vehículos mediante YOLO.')
 script_path = os.path.abspath(__file__)
 script_dir = os.path.dirname(script_path)
 
-video_url = "/data/vehicles_detector.mp4"
+# Construir las rutas completas a los archivos necesarios, subiendo un nivel desde 'pages'
+base_dir = os.path.dirname(script_dir)  # Subir un nivel desde 'pages'
  
-st.video(video_url)
+st.video(os.path.join())
